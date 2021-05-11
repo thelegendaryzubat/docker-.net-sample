@@ -1,13 +1,13 @@
-DROP TABLE IF EXISTS "weather_forecasts";
+DROP TABLE IF EXISTS public."weather_forecasts";
 
-CREATE TABLE "weather_forecasts"
+CREATE TABLE  public."weather_forecasts"
 (
-    Id           integer PRIMARY KEY,
+    Id           SERIAL PRIMARY KEY,
     Date         TIMESTAMP NOT NULL,
     TemperatureC integer NOT NULL
 );
 
-INSERT INTO "weather_forecasts" (Date, TemperatureC)
+INSERT INTO public."weather_forecasts" (Date, TemperatureC)
 VALUES ('2021-05-29 20:15:27', 30),
        ('2021-05-01 09:19:29', 19),
        ('2021-05-18 07:47:13', 9),
@@ -18,7 +18,7 @@ VALUES ('2021-05-29 20:15:27', 30),
        ('2021-05-03 02:00:50', 0),
        ('2021-05-05 06:30:22', 9),
        ('2021-05-30 13:14:17', 0);
-INSERT INTO "weather_forecasts" (Date, TemperatureC)
+INSERT INTO public."weather_forecasts" (Date, TemperatureC)
 VALUES ('2021-05-30 09:00:12', 18),
        ('2021-05-23 14:39:07', 7),
        ('2021-05-19 19:00:30', 4),
@@ -29,7 +29,7 @@ VALUES ('2021-05-30 09:00:12', 18),
        ('2021-05-02 10:46:10', 25),
        ('2021-05-12 02:58:58', 10),
        ('2021-05-13 21:20:58', 2);
-INSERT INTO "weather_forecasts" (Date, TemperatureC)
+INSERT INTO public."weather_forecasts" (Date, TemperatureC)
 VALUES ('2021-05-22 16:33:07', 20),
        ('2021-05-21 02:44:21', 1),
        ('2021-05-18 14:25:59', 23),
@@ -40,7 +40,7 @@ VALUES ('2021-05-22 16:33:07', 20),
        ('2021-05-07 04:25:23', 7),
        ('2021-05-04 16:55:23', 2),
        ('2021-05-13 09:08:44', -1);
-INSERT INTO "weather_forecasts" (Date, TemperatureC)
+INSERT INTO public."weather_forecasts" (Date, TemperatureC)
 VALUES ('2021-05-06 18:07:55', 26),
        ('2021-05-16 23:59:02', 2),
        ('2021-05-23 17:03:02', 25),
@@ -51,7 +51,7 @@ VALUES ('2021-05-06 18:07:55', 26),
        ('2021-05-26 08:31:29', 9),
        ('2021-05-22 10:16:44', -3),
        ('2021-05-01 15:22:53', 17);
-INSERT INTO "weather_forecasts" (Date, TemperatureC)
+INSERT INTO public."weather_forecasts" (Date, TemperatureC)
 VALUES ('2021-05-04 02:54:14', 20),
        ('2021-05-06 21:30:03', 2),
        ('2021-05-21 23:22:42', 28),
@@ -62,7 +62,7 @@ VALUES ('2021-05-04 02:54:14', 20),
        ('2021-05-03 00:05:42', 9),
        ('2021-05-21 12:35:37', 29),
        ('2021-05-09 08:11:28', 24);
-INSERT INTO "weather_forecasts" (Date, TemperatureC)
+INSERT INTO public."weather_forecasts" (Date, TemperatureC)
 VALUES ('2021-05-07 03:07:02', 17),
        ('2021-05-14 16:38:46', 25),
        ('2021-05-16 23:56:32', 24),
@@ -73,7 +73,7 @@ VALUES ('2021-05-07 03:07:02', 17),
        ('2021-05-08 11:37:08', 9),
        ('2021-05-04 13:18:17', 28),
        ('2021-05-29 00:35:12', 1);
-INSERT INTO "weather_forecasts" (Date, TemperatureC)
+INSERT INTO public."weather_forecasts" (Date, TemperatureC)
 VALUES ('2021-05-17 17:01:55', 24),
        ('2021-05-25 09:35:01', 5),
        ('2021-05-11 23:04:02', 22),
@@ -84,7 +84,7 @@ VALUES ('2021-05-17 17:01:55', 24),
        ('2021-05-03 17:09:37', 0),
        ('2021-05-02 09:15:08', 26),
        ('2021-05-19 05:53:58', 10);
-INSERT INTO "weather_forecasts" (Date, TemperatureC)
+INSERT INTO public."weather_forecasts" (Date, TemperatureC)
 VALUES ('2021-05-01 13:05:51', 19),
        ('2021-05-31 12:14:22', -1),
        ('2021-05-03 21:23:26', 24),
@@ -95,7 +95,7 @@ VALUES ('2021-05-01 13:05:51', 19),
        ('2021-05-03 16:57:52', 17),
        ('2021-05-16 03:01:08', 27),
        ('2021-05-05 10:08:31', 4);
-INSERT INTO "weather_forecasts" (Date, TemperatureC)
+INSERT INTO public."weather_forecasts" (Date, TemperatureC)
 VALUES ('2021-05-11 18:54:08', 16),
        ('2021-05-10 21:07:48', 2),
        ('2021-05-25 17:52:07', 18),
@@ -106,7 +106,7 @@ VALUES ('2021-05-11 18:54:08', 16),
        ('2021-05-06 04:21:25', -2),
        ('2021-05-19 14:39:10', 8),
        ('2021-05-29 10:18:30', 2);
-INSERT INTO "weather_forecasts" (Date, TemperatureC)
+INSERT INTO public."weather_forecasts" (Date, TemperatureC)
 VALUES ('2021-05-09 09:55:21', 20),
        ('2021-05-19 16:42:13', 5),
        ('2021-05-25 07:11:40', 4),

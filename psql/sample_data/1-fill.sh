@@ -8,7 +8,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     GRANT ALL PRIVILEGES ON DATABASE dckr_q TO dckr_q;
 EOSQL
 
-file="/docker-entrypoint-initdb.d/2-sample_data.sql"
+file="/docker-entrypoint-initdb.d/3-sample_data.sql"
 
 echo "Restoring DB using $file"
-pg_restore -U $POSTGRES_USER --dbname=$POSTGRES_DB --verbose --single-transaction < "$file" || exit 1
+psql -U $POSTGRES_USER --dbname=$POSTGRES_DB < "$file" || exit 1

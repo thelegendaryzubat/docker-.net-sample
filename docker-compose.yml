@@ -16,10 +16,10 @@ services:
         ports:
             - 5432:5432
         volumes:
-            - /var/lib/data/dcr_q_6/postgres/12:/var/lib/postgresql/data
-            #- ./psql/sample_data/1-init.sql:/docker-entrypoint-initdb.d/1-init.sql
+            - pg_data:/var/lib/postgresql/data
+            #- ./psql/sample_data/:/docker-entrypoint-initdb.d/
             - ./psql/sample_data/1-fill.sh:/docker-entrypoint-initdb.d/1-fill.sh
-            - ./psql/sample_data/2-sample_data.sql:/docker-entrypoint-initdb.d/2-sample_data.sql
+            - ./psql/sample_data/3-sample_data.sql:/docker-entrypoint-initdb.d/3-sample_data.sql
         environment:
             - POSTGRES_USER=dckr_q
             - POSTGRES_PASSWORD=111
@@ -30,3 +30,5 @@ services:
             timeout: 5s
             retries: 5
     
+volumes:
+  pg_data:
