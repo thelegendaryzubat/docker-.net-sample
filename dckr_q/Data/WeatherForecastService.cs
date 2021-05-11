@@ -27,11 +27,12 @@ namespace dckr_q.Data
 
         public async Task AddForecastAsync()
         {
-            await _context.WeatherForecasts.AddAsync(new WeatherForecast()
+            var result = await _context.WeatherForecasts.AddAsync(new WeatherForecast()
             {
                 Date = DateTime.Now,
                 TemperatureC = new Random().Next(-10, 25)
             });
+            await _context.SaveChangesAsync();
         }
     }
 }
