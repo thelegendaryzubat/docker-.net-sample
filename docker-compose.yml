@@ -1,0 +1,32 @@
+version: "3"
+services:
+    app:
+       image: dckr_q:latest
+       depends_on: 
+            postgres:
+                condition: service_healthy
+       build:
+        context: .
+        dockerfile: dckr_q/Dockerfile
+       ports: 
+        - "5000:80"
+    postgres:
+        image: postgres:12-alpine
+        restart: always
+        ports:
+            - 5432:5432
+        volumes:
+            - /var/lib/data/dcr_q_6/postgres/12:/var/lib/postgresql/data
+            #- ./psql/sample_data/1-init.sql:/docker-entrypoint-initdb.d/1-init.sql
+            - ./psql/sample_data/1-fill.sh:/docker-entrypoint-initdb.d/1-fill.sh
+            - ./psql/sample_data/2-sample_data.sql:/docker-entrypoint-initdb.d/2-sample_data.sql
+        environment:
+            - POSTGRES_USER=dckr_q
+            - POSTGRES_PASSWORD=111
+            - SCHEMA=public
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U dckr_q"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+    
